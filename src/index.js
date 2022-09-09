@@ -8,8 +8,10 @@ import CurrencyExchangeService from './currency-exchange-service.js';
 function currencyExchange(money, convertType) {
   CurrencyExchangeService.currencyExchange()
     .then(function(response) {
-      if (response.result === "success") {
+      if (response.result === "success" && response.conversion_rates[convertType]) {
         printElements(response, money, convertType);
+      } else if (response.result === "success") {
+        printError("Error: The currency in question doesn't exist.", money);
       } else {
         printError(response, money);
       }
@@ -19,7 +21,6 @@ function currencyExchange(money, convertType) {
 // UI Logic
 
 function printError(response, money) {
-  console.log(response);
   document.querySelector('#showResponse').innerText = `There was an error accessing the currency exchange data for ${money} USD: 
   ${response}`;
 }
