@@ -9,18 +9,10 @@
     <form>
       <label for="enterUSD">Enter a dollar amount in USD:</label>
       <input id="money" type="number" step=".01" name="money">
-      <label for="convertType">Enter the currency type you would like to convert to:
-      </label>
-      <input id="convertMoney" type="text" name="convertMoney">
-      <pre>
-        Currency Input Examples:
-        AUD
-        EGP
-        EUR
-        GBP
-        CAD
-        CNY
-      </pre>
+      <label for="convertType">Choose the currency type you would like to convert to:</label>
+      <select name="convertMoney" id="convertMoney">
+        <option value="currencyType"></option>
+      </select>
       <button type="submit" class="btn-success" id="moneyConvert">Convert that money!</button>
     </form>
     <p id="showResponse"></p>

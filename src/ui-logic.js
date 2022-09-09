@@ -19,5 +19,9 @@ function handleFormSubmission(event) {
 }
 
 window.addEventListener("load", function() {
+  // CurrencyExchangeService.currencyExchange()
+  //   .then(function(response) {
+
+  //   });
   document.querySelector('form').addEventListener("submit", handleFormSubmission);
 });

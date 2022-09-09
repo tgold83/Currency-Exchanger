@@ -18,3 +18,13 @@ export function currencyExchange(money, convertType) {
       }
     });
 }
+
+export function supportedCodes() {
+  CurrencyExchangeService.supportedCodes()
+  .then(function(response) {
+    if (response.result === "success") {
+    } else {
+      document.querySelector('#showResponse').innerText = `There was an error accessing the currency exchange data: ${response}`;
+    }
+  });
+}
