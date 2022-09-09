@@ -23,8 +23,7 @@ function printError(response, money) {
 }
 
 function printElements(response, money, convertType) { 
-  console.log(response.conversion_rates[convertType]);
-  document.querySelector('#showResponse').innerText = `The exchange rate for ${money} USD is ${response.conversion_rates[convertType] * money} ${convertType}.`; 
+  document.querySelector('#showResponse').innerText = `The exchange rate for ${money} USD is ${(response.conversion_rates[convertType] * money).toFixed(2)} ${convertType}.`; 
 }
 
 function handleFormSubmission(event) {
