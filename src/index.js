@@ -19,7 +19,9 @@ function currencyExchange(money, convertType) {
 // UI Logic
 
 function printError(response, money) {
-  document.querySelector('#showResponse').innerText = `There was an error accessing the currency exchange data for ${money}: ${response["error-type"]}`;
+  console.log(response);
+  document.querySelector('#showResponse').innerText = `There was an error accessing the currency exchange data for ${money} USD: 
+  ${response}`;
 }
 
 function printElements(response, money, convertType) { 
