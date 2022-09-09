@@ -11,27 +11,26 @@ function currencyExchange(money, convertType) {
       if (response.result === "success") {
         printElements(response, money, convertType);
       } else {
-        printError(error, money);
+        printError(response, money);
       }
     });
 }
 
 // UI Logic
 
-function printError(error, money) {
-  document.querySelector('#showResponse').innerText = `There was an error accessing the currency exchange data for ${money}: ${error}`;
+function printError(response, money) {
+  document.querySelector('#showResponse').innerText = `There was an error accessing the currency exchange data for ${money}: ${response["error-type"]}`;
 }
 
 function printElements(response, money, convertType) { 
-  let convertType = 
-  document.querySelector('#showResponse').innerText = `The exchange rate for ${money}USD is ${response.conversion_rates.USD}.
-  `; 
+  console.log(response.conversion_rates[convertType]);
+  document.querySelector('#showResponse').innerText = `The exchange rate for ${money} USD is ${response.conversion_rates[convertType] * money} ${convertType}.`; 
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
   const money = document.querySelector('#money').value;
-  const convertType = document.querySelector('#convertType').innerText;
+  const convertType = document.querySelector('#convertMoney').value;
   currencyExchange(money, convertType);
 }
 
