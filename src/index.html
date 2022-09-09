@@ -4,11 +4,23 @@
 </head>
 <body>
   <div class="container">
-    <h1>Was your bike stolen?</h1>
-    <p>Oh no! That is so sad! Use our site to find info on stolen bikes in your area.</p>
+    <h1>Currency Exchange</h1>
+    <p>Use this website to check the current exchange rate of the US dollar in othber currencies.</p>
     <form>
-      <label for="enterMoneyType">Enter a dollar amount in USD:</label>
+      <label for="enterUSD">Enter a dollar amount in USD:</label>
       <input id="money" type="text" name="money">
+      <label for="convertType">Enter the currency type you would like to convert to:
+      </label>
+      <input id="convertMoney" type="text" name="convertMoney">
+      <pre>
+        Currency Input Examples:
+        AUD
+        EGP
+        EUR
+        GBP
+        CAD
+        CNY
+      </pre>
       <button type="submit" class="btn-success" id="moneyConvert">Convert that money!</button>
     </form>
     <p id="showResponse"></p>

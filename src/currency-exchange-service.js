@@ -1,9 +1,9 @@
 export default class CurrencyExchangeService {  
-  static curreencyExchange(location) {
+  static currencyExchange() {
     return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
       .then(function(response) {
         if (!response.ok) {
-          const errorMessage = `${result}: ${error-type}`;
+          const errorMessage = `${response.status} ${response.statusText}`;
           throw new Error(errorMessage);
         } else {
           return response.json();
