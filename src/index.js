@@ -30,7 +30,7 @@ function printElements(response) {
   //   let bike = document.createElement("p");
   //   bike.innerText = bikeArray[i]["frame_model"];
   //   document.querySelector('#showResponse').append(bike); 
-  }  
+  // }  
 }
 
 function handleFormSubmission(event) {

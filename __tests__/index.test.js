@@ -1,9 +1,9 @@
-import './../src/index.js';
+// import './../src/index.js';
 
-describe('', () => {
+// describe('', () => {
 
-  test('should ', () => {
+//   test('should ', () => {
   
-    expect().toEqual();
-  });
-});
+//     expect().toEqual();
+//   });
+// });
