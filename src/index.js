@@ -1,43 +1,43 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import StolenBikeService from './stolen-bike-service.js';
+import CurrencyExchangeService from './currency-exchange-service.js';
 
 // Business Logic
 
-function stolenBike(location) {
-  StolenBikeService.stolenBike(location)
+function currencyExchange(money) {
+  CurrencyExchangeService.currencyExchange(money)
     .then(function(response) {
       if (response.bikes) {
-        printElements(response, location);
+        printElements(response, money);
       } else {
-        printError(response, location);
+        printError(response, money);
       }
     });
 }
 
 // UI Logic
 
-function printError(error, location) {
-  document.querySelector('#showResponse').innerText = `There was an error accessing the stolen bike data for ${location}: ${error}`;
+function printError(error, money) {
+  document.querySelector('#showResponse').innerText = `There was an error accessing the stolen bike data for ${money}: ${error}`;
 }
 
 function printElements(response) { 
-  console.log("Type of response.bikes " + typeof response.bikes[1] + response.bikes[1]);
+  // bikes[1] + response.bikes[1]);
 
-  let bikeArray = response.bikes;
-  for (let i = 0; i < bikeArray.length; i ++) {
-    let bike = document.createElement("p");
-    bike.innerText = bikeArray[i]["frame_model"];
-    document.querySelector('#showResponse').append(bike); 
+  // let bikeArray = response.bikes;
+  // for (let i = 0; i < bikeArray.length; i ++) {
+  //   let bike = document.createElement("p");
+  //   bike.innerText = bikeArray[i]["frame_model"];
+  //   document.querySelector('#showResponse').append(bike); 
   }  
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  const location = document.querySelector('#location').value;
-  // document.querySelector('#location').value = null;
-  stolenBike(location);
+  // const money = document.querySelector('#money').value;
+  // // document.querySelector('#money').value = null;
+  // stolenBike(money);
 }
 
 window.addEventListener("load", function() {
